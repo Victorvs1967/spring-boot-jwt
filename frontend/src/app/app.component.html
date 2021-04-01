@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-4">
+  <div class="container-fluid" routerLinkActive="active">
+    <a class="navbar-brand" routerLink="home">Spring-Angular-JWT</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item" routerLink="home" class="nav-link">Home</a>
+        <a *ngIf="authority === 'user'" routerLink="user" class="nav-link">User Board</a>
+        <a *ngIf="authority === 'admin'" routerLink="admin" class="nav-link">Admin Board</a>
+        <a *ngIf="authority === 'pm'" routerLink="pm" class="nav-link">PM Board</a>
+        <a *ngIf="!authority" routerLink="auth/login" class="nav-link">Login</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
